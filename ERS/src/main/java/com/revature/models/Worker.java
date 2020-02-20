@@ -16,7 +16,7 @@ public class Worker {
 	//@GeneratedValue(strategy=GenerationType.AUTO)
 	private int workerId;
 	private String lastName;
-	private String firsName;
+	private String firstName;
 	private String username;
 	private String passCode;
 	private String title;
@@ -49,12 +49,12 @@ public class Worker {
 		this.lastName = lastName;
 	}
 
-	public String getFirsName() {
-		return firsName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirsName(String firsName) {
-		this.firsName = firsName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getUsername() {
@@ -151,7 +151,7 @@ public class Worker {
 		int result = 1;
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((firsName == null) ? 0 : firsName.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((hireDate == null) ? 0 : hireDate.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((passCode == null) ? 0 : passCode.hashCode());
@@ -185,10 +185,10 @@ public class Worker {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (firsName == null) {
-			if (other.firsName != null)
+		if (firstName == null) {
+			if (other.firstName != null)
 				return false;
-		} else if (!firsName.equals(other.firsName))
+		} else if (!firstName.equals(other.firstName))
 			return false;
 		if (hireDate == null) {
 			if (other.hireDate != null)
@@ -244,10 +244,11 @@ public class Worker {
 
 	@Override
 	public String toString() {
-		return "Worker [workerId=" + workerId + ", lastName=" + lastName + ", firsName=" + firsName + ", username="
+		return "Worker [workerId=" + workerId + ", lastName=" + lastName + ", firstName=" + firstName + ", username="
 				+ username + ", passCode=" + passCode + ", title=" + title + ", reportsTo=" + reportsTo + ", hireDate="
 				+ hireDate + ", streetAddress=" + streetAddress + ", city=" + city + ", state=" + state + ", zip=" + zip
 				+ ", phone=" + phone + ", email=" + email + "]";
 	}
 
+	
 }
