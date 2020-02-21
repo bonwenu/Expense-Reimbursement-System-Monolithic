@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -13,7 +14,8 @@ import org.springframework.stereotype.Component;
 public class Worker {
 
 	@Id
-	//@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "worker_generator")
+	@SequenceGenerator(name="worker_generator", sequenceName = "worker_seq", allocationSize=50)
 	private int workerId;
 	private String lastName;
 	private String firstName;

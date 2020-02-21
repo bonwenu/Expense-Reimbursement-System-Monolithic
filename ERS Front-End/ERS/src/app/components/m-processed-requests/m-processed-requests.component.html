@@ -27,11 +27,11 @@
     
     <hr style="border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:2.5mm">
 	<br> 
-	<button style = 'margin-left: 20px' class="btn btn-primary" onclick="location.href='http://localhost:8080/ERS/mreimbursements'" type="button">
+	<button style = 'margin-left: 20px' class="btn btn-primary" routerLink="/mHome" type="button">
 		Back</button>
 		<br><br>
 
-		<h4 style  ="margin-left: 70px">Resolved</h4>
+		<h4 style  ="margin-left: 70px">All Resolved Requests</h4>
 
 		<div class="container">
 	
@@ -44,6 +44,14 @@
 					<th>Description</th>
 					<th>Status</th>
 					<th>Resolved By</th>
+				</tr>
+				<tr *ngFor = "let request of requests">
+					<td>{{request.reqId}}</td>
+					<td>{{request.empId}}</td>
+					<td>{{request.amount}}</td>
+					<td>{{request.description}}</td>
+					<td>{{request.status}}</td>
+					<td>{{request.resolvedBy}}</td>
 				</tr>
 			</table>
 		</div> <br><br>

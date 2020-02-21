@@ -13,7 +13,6 @@ import com.revature.daos.WorkerDAO;
 import com.revature.daos.WorkerDAOImpl;
 import com.revature.models.Worker;
 import com.revature.services.WorkerService;
-import com.revature.services.WorkerServiceImpl;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"})
@@ -24,7 +23,7 @@ public class WorkerController {
 	private WorkerService ws;
 	
 	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Worker> placeHolder() {
+	public List<Worker> getAllWorkers() {
 
 		return ws.getAllWorkers();
 	}

@@ -2,7 +2,9 @@ package com.revature.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -10,8 +12,9 @@ import javax.persistence.Table;
 public class Request  {
 	
 	@Id
-	//@GeneratedValue(strategy=GenerationType.AUTO)
-	private int reqID;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "request_generator")
+	@SequenceGenerator(name="request_generator", sequenceName = "Request_seq", allocationSize=50)
+	private int reqId;
 	private int empId;
 	private double amount;
 	private String description;
@@ -22,9 +25,13 @@ public class Request  {
 		super();
 	}
 	
+	public Request(int id) {
+		this.reqId = id;
+	}
+	
 	public Request(int reqID, int empId, double amount, String description, String status, String resolvedBy) {
 		super();
-		this.reqID = reqID;
+		this.reqId = reqID;
 		this.empId = empId;
 		this.amount = amount;
 		this.description = description;
@@ -50,14 +57,14 @@ public class Request  {
 
 
 
-	public int getReqID() {
-		return reqID;
+	public int getReqId() {
+		return reqId;
 	}
 
 
 
-	public void setReqID(int reqID) {
-		this.reqID = reqID;
+	public void setReqId(int reqID) {
+		this.reqId = reqID;
 	}
 
 
@@ -130,7 +137,7 @@ public class Request  {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + empId;
-		result = prime * result + reqID;
+		result = prime * result + reqId;
 		result = prime * result + ((resolvedBy == null) ? 0 : resolvedBy.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
@@ -156,7 +163,7 @@ public class Request  {
 			return false;
 		if (empId != other.empId)
 			return false;
-		if (reqID != other.reqID)
+		if (reqId != other.reqId)
 			return false;
 		if (resolvedBy == null) {
 			if (other.resolvedBy != null)
@@ -173,7 +180,7 @@ public class Request  {
 
 	@Override
 	public String toString() {
-		return "Request [reqID=" + reqID + ", empId=" + empId + ", amount=" + amount + ", description=" + description
+		return "Request [reqId=" + reqId + ", empId=" + empId + ", amount=" + amount + ", description=" + description
 				+ ", status=" + status + ", resolvedBy=" + resolvedBy + "]";
 	}
 
