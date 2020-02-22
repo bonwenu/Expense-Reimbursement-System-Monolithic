@@ -1,1 +1,69 @@
-<p>profile works!</p>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="https://thesocietypages.org/socimages/files/2009/05/nopic_192.gif" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4><b>{{profileData?.firstName}} {{profileData?.lastName}}</b></h4>
+                        
+                        
+                        <p> 
+                            <i class="glyphicon glyphicon-briefcase"></i>{{profileData?.hireDate}}
+                            <br />
+                            <i class="glyphicon glyphicon-user"></i>{{profileData?.title}}
+                            <br />
+                            <i class="glyphicon glyphicon-home"></i>{{profileData?.streetAddress}}
+                            <br />&nbsp; &nbsp; &nbsp; {{profileData?.city}}, {{profileData?.state}} {{profileData?.zip}}
+                            <br />
+                            <i class="glyphicon glyphicon-phone"></i>{{profileData?.phone}}
+                            <br />
+                            <i class="glyphicon glyphicon-envelope"></i>{{profileData?.email}}
+                            <br /></p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button *ngIf = !editActive type="button" class="btn btn-primary" (click) = edit()>
+                                Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf = editActive  class="container">
+	
+	
+	<form >
+        <label>First Name</label><br>
+	    <input [(ngModel)]="employee.firstName" placeholder="{{profileData?.firstName}}" class="form-control" type="text" name="firstName"><br><br>
+	    <label>Last Name</label><br>
+        <input [(ngModel)]="employee.lastName" placeholder="{{profileData?.lastName}}" class="form-control" type="text" name="lastName"><br><br>
+        <label>Street Address</label><br>
+	    <input [(ngModel)]="employee.streetAddress" placeholder="{{profileData?.streetAddress}}" class="form-control" type="text" name="street"><br><br>
+	    <label>State</label><br>
+        <input [(ngModel)]="employee.state" placeholder="{{profileData?.state}}" class="form-control" type="text" name="state"><br><br>
+        <label>City</label><br>
+	    <input [(ngModel)]="employee.city" placeholder="{{profileData?.city}}" class="form-control" type="text" name="city"><br><br>
+	    <label>Zip Code</label><br>
+        <input [(ngModel)]="employee.zip" placeholder="{{profileData?.zip}}" class="form-control" type="text" name="zip"><br><br>
+        <label>Phone</label><br>
+	    <input [(ngModel)]="employee.phone" placeholder="{{profileData?.phone}}" class="form-control" type="text" name="phone"><br><br>
+	    <label>Email</label><br>
+	    <input [(ngModel)]="employee.email" placeholder= "{{profileData?.email}}" class="form-control" type="text" name="email"><br><br>
+        <div style = "text-align: right;">
+            <button style = "margin-right: 0.7in;" (click)=cancel() class="btn btn-danger">Cancel</button> 
+            <button (click)=applyChanges() class="btn btn-primary">Add Request</button> 
+            <br><br><br>
+        </div>
+    </form>
+
+</div>

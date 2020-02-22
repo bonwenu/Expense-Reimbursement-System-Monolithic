@@ -14,9 +14,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeData:EmployeeService, private router: Router) { }
 
   ngOnInit() {
-    if(sessionStorage.getItem("title") !== "Manager") {
-      this.router.navigateByUrl("403");
-    } 
+    
     this.employeeData.getAllEmployees().subscribe(data => {
       this.employees = data;
       console.log(this.employees);

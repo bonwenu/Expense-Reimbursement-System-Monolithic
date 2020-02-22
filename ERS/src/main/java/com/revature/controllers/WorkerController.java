@@ -6,11 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.daos.WorkerDAO;
 import com.revature.daos.WorkerDAOImpl;
+import com.revature.models.Request;
 import com.revature.models.Worker;
 import com.revature.services.WorkerService;
 
@@ -28,16 +33,14 @@ public class WorkerController {
 		return ws.getAllWorkers();
 	}
 	
-	@GetMapping("/home")
-	public String returnHomePage() {
-		return "Home";
+	@GetMapping("/{id}")
+	public Worker getWorkerById(@PathVariable int id) {
+		
+		return ws.getWorkerById(id);
 	}
 	
-	@GetMapping("/home2")
-	public List<Worker> pp() {
-		
-		WorkerDAO wd = new WorkerDAOImpl();
-
-		return wd.getAllWorkers();
+	@PutMapping
+	public void updateWorker(@RequestBody Worker w) {
+		ws.updateWorkerInfo(w);
 	}
 }
