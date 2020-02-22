@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>
+  	<failOnMissingWebXml>false</failOnMissingWebXml>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -77,6 +78,24 @@
 	  		<artifactId>ojdbc7</artifactId>
 	  		<version>12.1.0</version>
 	  	</dependency>
+	  		  	<!--  Spring Security -->
+	 	<dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-bom</artifactId>
+            <version>5.2.2.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>5.2.1.RELEASE</version>
+		</dependency>
+	    <dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>5.2.1.RELEASE</version>
+		</dependency>
 	    <dependency>
 	      <groupId>junit</groupId>
 	      <artifactId>junit</artifactId>
@@ -86,5 +105,6 @@
   </dependencies>
   <build>
     <finalName>ERS</finalName>
+    
   </build>
 </project>

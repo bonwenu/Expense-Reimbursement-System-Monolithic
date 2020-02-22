@@ -22,13 +22,16 @@
 	<div>
     <img style="float:right;width:140px;height:100px;" src="https://people.emich.edu/bonwenu/images/blueleaf.png" alt="blue leaf">
     <br>
-    <label for="name">Name</label> <br>
-    <input type="text" id="username" name="name" /><br>
-    
-    <label for="password">Password</label> <br>
-    <input type="password" id="password" name="pw" /> <br><br>
-	
-	<button id="login-btn"> Log In! </button>
+    <div class="container">
+        <div>
+          User Name : <input type="text" name="username" [(ngModel)]="username">
+          Password : <input type="password" name="password" [(ngModel)]="password">
+        </div>
+        <button (click)=checkLogin() class="btn btn-success">
+          Login
+        </button>
+    </div>
+
 </div>
 
 </body>

@@ -12,57 +12,83 @@ import { MPendingRequestsComponent } from './components/m-pending-requests/m-pen
 import { MProcessedRequestsComponent } from './components/m-processed-requests/m-processed-requests.component';
 import { SpecifyEmployeeComponent } from './components/specify-employee/specify-employee.component';
 import { ManagerRequestsMainComponent } from './components/manager-requests-main/manager-requests-main.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [
   {
-    path: "all-employees",
-    component: EmployeeListComponent  
-  },
-  {
-    path: "create-new-request",
-    component: CreateRequestsComponent
-  },
-  {
-    path: "eHome",
-    component: EmployeeHomeComponent
-  },
-  {
-    path: "mHome",
-    component: ManagerHomeComponent
-  },
-  {
-    path: "login",
+    path: "",
     component: LoginComponent
   },
   {
+    path: "all-employees",
+    component: EmployeeListComponent,
+    canActivate:[AuthGuardService]  
+  },
+  {
+    path: "create-new-request",
+    component: CreateRequestsComponent,
+    canActivate:[AuthGuardService]  
+  },
+  {
+    path: "eHome",
+    component: EmployeeHomeComponent,
+    canActivate:[AuthGuardService]  
+  },
+  {
+    path: "mHome",
+    component: ManagerHomeComponent,
+    canActivate:[AuthGuardService]  
+  },
+  {
+    path: "login",
+    component: LoginComponent 
+  },
+  {
+    path: 'logout', 
+    component: LogoutComponent,
+    canActivate:[AuthGuardService]   
+  },
+  {
     path: "profile",
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate:[AuthGuardService]  
   },
   {
     path: "employee-pending",
-    component: EPendingRequestsComponent
+    component: EPendingRequestsComponent,
+    canActivate:[AuthGuardService]  
   },
   {
     path: "employee-processed",
-    component: EProcessedRequestsComponent
+    component: EProcessedRequestsComponent,
+    canActivate:[AuthGuardService]  
   },
   {
     path: "manager-pending",
-    component: MPendingRequestsComponent
+    component: MPendingRequestsComponent,
+    canActivate:[AuthGuardService]  
   },
   {
     path: "manager-processed",
-    component: MProcessedRequestsComponent
+    component: MProcessedRequestsComponent,
+    canActivate:[AuthGuardService]  
   },
   {
     path: "manager-requests-main",
-    component: ManagerRequestsMainComponent
+    component: ManagerRequestsMainComponent,
+    canActivate:[AuthGuardService]  
   },
   {
     path: "specify-employee",
-    component: SpecifyEmployeeComponent
-  }
+    component: SpecifyEmployeeComponent,
+    canActivate:[AuthGuardService]  
+  },
+  {
+    path: '**', 
+    redirectTo: "login"
+  },
 
 ];
 
