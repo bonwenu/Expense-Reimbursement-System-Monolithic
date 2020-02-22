@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-m-pending-requests',
@@ -10,9 +11,13 @@ export class MPendingRequestsComponent implements OnInit {
 
   requests: object;
 
-  constructor(private requestData:RequestService) { }
+  constructor(private requestData:RequestService, private router:Router) { }
 
   ngOnInit() {
+
+    if(sessionStorage.getItem("title") !== "Manager") {
+      this.router.navigateByUrl("403");
+    } 
 
     this.requestData.getAllPendingRequests().subscribe(data => {
       this.requests = data;

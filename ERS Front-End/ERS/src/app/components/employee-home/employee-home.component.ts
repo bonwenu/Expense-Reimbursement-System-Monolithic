@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    if(sessionStorage.getItem("title") == "Manager") {
+      this.router.navigate(['mHome'])
+    } 
+    console.log(typeof(sessionStorage.getItem("title")))
+    console.log(typeof("Manager"));
+  
   }
 
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import {AfterViewInit} from '@angular/core';   
+import { EmployeeService } from 'src/app/services/employee.service';
+import { Employees } from 'src/Employees';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +16,21 @@ export class LoginComponent implements OnInit, AfterViewInit  {
   password:string = '';
   invalidLogin:boolean = false;
   errorMessage:string = 'Invalid Credentials';
-  
+  users:Employees[];
+  employee : Employees;
+  title: string;
+  id: number;
 
   constructor(private router: Router,
-    private loginservice: AuthenticationService) { }
+    private loginservice: AuthenticationService,
+    private employeeData: EmployeeService) { }
 
   ngOnInit() {
+
+    this.employeeData.getAllEmployees().subscribe(data => {
+      this.users = data;
+
+    });
     
   }
 
@@ -29,11 +40,35 @@ export class LoginComponent implements OnInit, AfterViewInit  {
 }
 
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate(["mHome"])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+
+    let valid = false;
+
+    for(let i = 0; i < this.users.length; i++) {
+      if (this.username === this.users[i].username && this.password === this.users[i].passCode) {
+        this.employee = this.users[i];
+        this.title = this.employee.title;
+        this.id = this.employee.workerId;
+        valid = true;
+        break;
+      }
+
+    }
+    if (valid) {
+      this.authorize();
+    }
   }
-}
+  authorize() {
+    this.loginservice.authenticate(this.username, this.title, this.id) 
+    if (sessionStorage.getItem("title") === "Manager") { 
+      this.router.navigateByUrl("/mHome")
+      this.invalidLogin = false
+    }
+    else {
+      this.router.navigateByUrl("/eHome")
+      this.invalidLogin = false
+      } 
+      
+    }
+    
+  }
+

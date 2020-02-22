@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset='utf-8'>
 	<title>Create Request</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,7 +23,7 @@
     <br><br>
     <hr style= "border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:3mm">
     
-    <h2 style ="text-align: left; padding-left: 4mm" >Reinbursements Request</h2>
+    <h2 style ="text-align: left; padding-left: 4mm" >Reimbursement Request</h2>
     
     <hr style="border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:2.5mm">
 	<br> 
@@ -32,13 +32,14 @@
 <div class="container">
 	
 	
-	<form action="api/requests" method="POST">
+	<form >
         <label>Amount</label><br>
-	    <input class="form-control" type="text" name="amount"><br><br>
+	    <input [(ngModel)]="request.amount" placeholder="Amount" class="form-control" type="number" name="amount"><br><br>
 	    <label>Description</label><br>
-	    <input class="form-control" type="text" name="description"><br><br>
-	    <input type="submit" value="Add Request" class="btn btn-primary">
+	    <input [(ngModel)]="request.description" placeholder="Description" class="form-control" type="text" name="description"><br><br>
+	    <button (click)=create() class="btn btn-primary">Add Request</button> 
     </form>
+
 </div>
 
 

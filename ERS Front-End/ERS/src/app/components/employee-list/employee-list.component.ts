@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -10,9 +11,12 @@ export class EmployeeListComponent implements OnInit {
   
   employees: object;
 
-  constructor(private employeeData:EmployeeService) { }
+  constructor(private employeeData:EmployeeService, private router: Router) { }
 
   ngOnInit() {
+    if(sessionStorage.getItem("title") !== "Manager") {
+      this.router.navigateByUrl("403");
+    } 
     this.employeeData.getAllEmployees().subscribe(data => {
       this.employees = data;
       console.log(this.employees);

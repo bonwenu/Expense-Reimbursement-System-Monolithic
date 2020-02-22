@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-e-pending-requests',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EPendingRequestsComponent implements OnInit {
 
-  constructor() { }
+  requests: object;
+
+  constructor(private router: Router, private requestData: RequestService) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("workerId"));
+    this.requestData.getPendingRequestsById(Number(sessionStorage.getItem("workerId"))).subscribe(data => {
+      this.requests = data;
+      console.log(this.requests);
+      
+      console.log("Pending requests have been loaded");
+    
+  });
+    
+}
+
+  back() {
+    if(sessionStorage.getItem("title") === "Manager") {
+      this.router.navigateByUrl("mHome");
+    } 
+    else {
+      this.router.navigateByUrl("eHome");
+    }
   }
 
 }

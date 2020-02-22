@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-specify-employee',
@@ -11,9 +12,12 @@ export class SpecifyEmployeeComponent implements OnInit {
   pRequests: object;
   nPRequests: object;
 
-  constructor(private requestData:RequestService) { }
+  constructor(private requestData:RequestService, private router: Router) { }
 
   ngOnInit() {
+    if(sessionStorage.getItem("title") !== "Manager") {
+      this.router.navigateByUrl("403");
+    }
     // Make it to button press
     this.requestData.getPendingRequestsById(4).subscribe(data => {
       this.pRequests = data;

@@ -9,7 +9,6 @@ import { EmployeeHomeComponent } from './components/employee-home/employee-home.
 import { ManagerHomeComponent } from './components/manager-home/manager-home.component';
 import { CreateRequestsComponent } from './components/create-requests/create-requests.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
-import { ManagerRequestsMainComponent } from './components/manager-requests-main/manager-requests-main.component';
 import { LoginNavComponent } from './components/login-nav/login-nav.component';
 import { EmployeeNavComponent } from './components/employee-nav/employee-nav.component';
 import { ManagerNavComponent } from './components/manager-nav/manager-nav.component';
@@ -34,7 +33,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ManagerHomeComponent,
     CreateRequestsComponent,
     EmployeeListComponent,
-    ManagerRequestsMainComponent,
     LoginNavComponent,
     EmployeeNavComponent,
     ManagerNavComponent,

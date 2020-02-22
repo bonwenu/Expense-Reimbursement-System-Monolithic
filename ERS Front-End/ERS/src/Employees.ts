@@ -1,17 +1,20 @@
 export class Employees{
+    
     workerId: number;
-    lastName: String;
-    firstName: String;
-    username: String;
-    passCode: String;
-    title: String;
+    lastName: string;
+    firstName: string;
+    username: string;
+    passCode: string;
+    title: string;
     reportsTo: number;
-    hireDate: String;
-    streetAddress: String;
-    city: String;
-    state: String;
-    zip: String;
-    phone: String
-    email: String;
+    hireDate: string;
+    streetAddress: string;
+    city: string;
+    state: string;
+    zip: string;
+    phone: string
+    email: string;
+
+    constructor() {}
 
 }

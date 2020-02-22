@@ -7,4 +7,8 @@ export class Requests {
     status: string;
     resolvedBy: string;
     
+    constructor() {};
+
+    
+    
 }

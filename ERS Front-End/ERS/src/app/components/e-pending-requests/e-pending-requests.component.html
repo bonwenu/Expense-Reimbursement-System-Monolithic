@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset='utf-8'>
 	<title>Pending Reinbursements Requests</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     <hr style="border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:2.5mm">
 	<br> 
 	<br>
-     <button style = 'margin-left: 20px' class="btn btn-primary" onclick="location.href='http://localhost:8080/ERS/mreimbursements'" type="button"> Back</button>
+     <button style = 'margin-left: 20px' class="btn btn-primary" (click)=back() type="button"> Back</button>
     <br><br>
 
 		<h1 style  ="margin-left: 70px">Pending</h1>
@@ -44,6 +44,14 @@
 					<th>Description</th>
 					<th>Status</th>
 					<th>Resolved By</th>
+				</tr>
+				<tr *ngFor = "let request of requests">
+					<td>{{request.reqId}}</td>
+					<td>{{request.empId}}</td>
+					<td>{{request.amount}}</td>
+					<td>{{request.description}}</td>
+					<td>{{request.status}}</td>
+					<td>{{request.resolvedBy}}</td>
 				</tr>
 			</table>
 		</div> <br><br>

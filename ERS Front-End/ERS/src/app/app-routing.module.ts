@@ -11,9 +11,10 @@ import { EProcessedRequestsComponent } from './components/e-processed-requests/e
 import { MPendingRequestsComponent } from './components/m-pending-requests/m-pending-requests.component';
 import { MProcessedRequestsComponent } from './components/m-processed-requests/m-processed-requests.component';
 import { SpecifyEmployeeComponent } from './components/specify-employee/specify-employee.component';
-import { ManagerRequestsMainComponent } from './components/manager-requests-main/manager-requests-main.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ForbiddenContentComponent } from './components/forbidden-content/forbidden-content.component';
 
 
 const routes: Routes = [
@@ -76,19 +77,23 @@ const routes: Routes = [
     canActivate:[AuthGuardService]  
   },
   {
-    path: "manager-requests-main",
-    component: ManagerRequestsMainComponent,
-    canActivate:[AuthGuardService]  
-  },
-  {
     path: "specify-employee",
     component: SpecifyEmployeeComponent,
     canActivate:[AuthGuardService]  
   },
   {
-    path: '**', 
-    redirectTo: "login"
+    path: "403", 
+    component: ForbiddenContentComponent,
+    canActivate:[AuthGuardService]  
   },
+  {
+    path: "404", 
+    component: NotFoundComponent
+  },
+  {
+    path: '**', 
+    redirectTo: "404"
+  }
 
 ];
 

@@ -7,14 +7,12 @@ export class AuthenticationService {
 
   constructor() { }
 
-  authenticate(username, password) {
-    if (username === "javainuse" && password === "password") {
+  authenticate(username:string, title: string, id:number) {
+
       sessionStorage.setItem('username', username);
-      sessionStorage.setItem('title', "Manager");
-      return true;
-    } else {
-      return false;
-    }
+      sessionStorage.setItem('title', title);
+      sessionStorage.setItem('workerId', id.toString());
+    
   }
 
   isUserLoggedIn() {
@@ -24,6 +22,6 @@ export class AuthenticationService {
   }
 
   logOut() {
-    sessionStorage.removeItem('username')
+    sessionStorage.clear();
   }
 }

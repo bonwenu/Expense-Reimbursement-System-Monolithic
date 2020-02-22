@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-e-processed-requests',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EProcessedRequestsComponent implements OnInit {
 
-  constructor() { }
+  requests:Object;
+  constructor(private router: Router, private requestData: RequestService) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("workerId"));
+    this.requestData.getNonPendingRequestsById(Number(sessionStorage.getItem("workerId"))).subscribe(data => {
+      this.requests = data;
+      console.log(this.requests);
+  });
+}
+
+  back() {
+    if(sessionStorage.getItem("title") === "Manager") {
+      this.router.navigateByUrl("mHome");
+    } 
+    else {
+      this.router.navigateByUrl("eHome");
+    }
   }
 
 }
