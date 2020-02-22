@@ -40,8 +40,10 @@ export class ProfileComponent implements OnInit {
     this.testForNoChange();
     this.employeeData.updateEmployee(this.employee).subscribe(data => {
       console.log("Employee has been updated.");
-      console.log(data);
       sessionStorage.removeItem("pData");
+      // Reset form fields
+      this.employee = new Employees();
+      // Reload component elemetns
       this.ngOnInit();
     });
   }
