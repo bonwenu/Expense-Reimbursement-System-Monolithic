@@ -3,7 +3,6 @@ import { RequestService } from 'src/app/services/request.service';
 import { Router } from '@angular/router';;
 import { Requests } from 'src/Requests';
 import { EmployeeService } from 'src/app/services/employee.service';
-import { Employees } from 'src/Employees';
 
 @Component({
   selector: 'app-m-pending-requests',
@@ -12,7 +11,7 @@ import { Employees } from 'src/Employees';
 })
 export class MPendingRequestsComponent implements OnInit {
 
-  requests: Requests[];
+  requests: object;
   employeeName: any;
   
 
@@ -37,18 +36,19 @@ export class MPendingRequestsComponent implements OnInit {
     r.resolvedBy = sessionStorage.getItem("name");
     r.status = "APPROVED"
     this.requestData.updateRequest(r).subscribe(data => {
+      this.requests = data;
       console.log("Request approved");
     });
-    this.ngOnInit();
+    
   }
 
   deny(r:Requests) {
     r.resolvedBy = sessionStorage.getItem("name");
     r.status = "DENIED"
     this.requestData.updateRequest(r).subscribe(data => {
+      this.requests = data;
       console.log("Request denied");
     });
-    this.ngOnInit();
   }
 
 }

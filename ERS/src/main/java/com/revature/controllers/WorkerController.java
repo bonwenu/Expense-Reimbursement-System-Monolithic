@@ -43,11 +43,13 @@ public class WorkerController {
 	@GetMapping("/name/{id}")
 	public @ResponseBody String getNameById(@PathVariable int id) {
 		Worker w = ws.getWorkerById(id);
-		return w.getFirstName() + " "+w.getLastName();
+		String name = w.getFirstName() + " "+w.getLastName();
+		return name;
 	}
-	
+	// Return worker information after update
 	@PutMapping
-	public void updateWorker(@RequestBody Worker w) {
+	public Worker updateWorker(@RequestBody Worker w) {
 		ws.updateWorkerInfo(w);
+		return ws.getWorkerById(w.getWorkerId());
 	}
 }

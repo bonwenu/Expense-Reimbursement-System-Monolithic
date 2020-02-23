@@ -61,9 +61,11 @@ public class RequestController {
 		rs.createRequest(r);
 	}
 	
+	// Return list after approving/denying request
 	@PutMapping
-	public void updateRequest(@RequestBody Request r) {
+	public List<Request> updateRequest(@RequestBody Request r) {
 		rs.updateRequest(r);
+		return rs.getAllPending();
 	}
 	
 }

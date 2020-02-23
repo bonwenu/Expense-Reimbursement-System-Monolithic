@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class Request  {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "request_generator")
-	@SequenceGenerator(name="request_generator", sequenceName = "Request_seq", allocationSize=50)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "request_generator")
+	@SequenceGenerator(name="request_generator", sequenceName = "Request_seq")
 	private int reqId;
 	private int empId;
 	private double amount;

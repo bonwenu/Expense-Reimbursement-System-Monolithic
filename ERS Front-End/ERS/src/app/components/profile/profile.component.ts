@@ -10,7 +10,7 @@ import { Employees } from 'src/Employees';
 export class ProfileComponent implements OnInit {
 
   employee: Employees = new Employees();
-  profileData: Employees[];
+  profileData: object;
   // Check if edit was pushed
   editActive : boolean = false;
   
@@ -39,12 +39,11 @@ export class ProfileComponent implements OnInit {
     this. editActive = false;
     this.testForNoChange();
     this.employeeData.updateEmployee(this.employee).subscribe(data => {
-      console.log("Employee has been updated.");
+      // Updated information is sent from backend
+      this.profileData = data;
       sessionStorage.removeItem("pData");
       // Reset form fields
       this.employee = new Employees();
-      // Reload component elemetns
-      this.ngOnInit();
     });
   }
 

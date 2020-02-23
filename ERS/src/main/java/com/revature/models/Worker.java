@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 public class Worker {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "worker_generator")
-	@SequenceGenerator(name="worker_generator", sequenceName = "worker_seq", allocationSize=50)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "worker_generator")
+	@SequenceGenerator(name="worker_generator", sequenceName = "worker_seq")
 	private int workerId;
 	private String lastName;
 	private String firstName;
