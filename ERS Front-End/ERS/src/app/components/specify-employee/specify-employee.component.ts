@@ -9,26 +9,33 @@ import { Router } from '@angular/router';
 })
 export class SpecifyEmployeeComponent implements OnInit {
 
+  showTable: boolean = false;
   pRequests: object;
   nPRequests: object;
+  id:number;
 
   constructor(private requestData:RequestService, private router: Router) { }
 
   ngOnInit() {
-    if(sessionStorage.getItem("title") !== "Manager") {
-      this.router.navigateByUrl("403");
-    }
-    // Make it to button press
-    this.requestData.getPendingRequestsById(4).subscribe(data => {
+    
+
+  }
+
+  getData() {
+    this.showTable = true;
+
+   // Make it to button press
+    this.requestData.getPendingRequestsById(this.id).subscribe(data => {
       this.pRequests = data;
       console.log(this.pRequests);
       console.log("Specified employee pending requests have been loaded");
     });
-    this.requestData.getNonPendingRequestsById(4).subscribe(data => {
+    this.requestData.getNonPendingRequestsById(this.id).subscribe(data => {
       this.nPRequests = data;
       console.log(this.nPRequests);
       console.log("Specified employee non-pending requests have been loaded");
     });
+
   }
 
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset='utf-8'>
 	<title>Manager Reinbursements Specify</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,15 +12,7 @@
 
 </head>
 <body>
-    <ul class="nav">
-        <li class="navR"><a class="navR" href="http://localhost:8080/ERS/mhome">Home</a></li>
-        <li class="nav"><a class="nav" href="https://people.emich.edu/bonwenu/">Annoncements</a></li>
-        <li class="nav"><a class="nav" href="http://localhost:8080/ERS/mreimbursements">Reimbursement</a></li>
-		<li class="nav"><a class="nav" href="http://localhost:8080/ERS/mprofile">Profile</a></li>
-		<li class="nav"><a class="nav" href="http://localhost:8080/ERS/login">Log out</a></li>
-        
-    </ul>
-    <br><br>
+    
     <hr style= "border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:3mm">
     
     <h2 style ="text-align: left; padding-left: 4mm" >Reimbursement Request (Management)</h2>
@@ -32,11 +24,11 @@
 
 		<h4 style  ="margin-left: 70px">Enter Employee ID</h4>
 		<div class = "container">
-        <input type="number" id="empID">
-		<button class="btn btn-primary"  id = "getD" >Get Employee Requests</button>
+        <input type="number" id="empID" tpye ="number" [(ngModel)]= id>
+		<button (click) = getData() class="btn btn-primary"  id = "getD" >Get Employee Requests</button>
 		<br>
 	</div>
-
+	<div *ngIf = showTable>
 	<h1>Pending Requests</h1>
 
 		<div class="container">
@@ -85,6 +77,6 @@
 				</tr>
 			</table>
 		</div> <br><br>
-
+	</div>
 </body>
 </html>

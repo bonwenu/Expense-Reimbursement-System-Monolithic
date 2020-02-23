@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +20,7 @@ public class Worker {
 	private int workerId;
 	private String lastName;
 	private String firstName;
+	@Column(unique = true)
 	private String username;
 	private String passCode;
 	private String title;

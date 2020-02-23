@@ -14,11 +14,6 @@ export class MPendingRequestsComponent implements OnInit {
   constructor(private requestData:RequestService, private router:Router) { }
 
   ngOnInit() {
-
-    if(sessionStorage.getItem("title") !== "Manager") {
-      this.router.navigateByUrl("403");
-    } 
-
     this.requestData.getAllPendingRequests().subscribe(data => {
       this.requests = data;
       console.log(this.requests);
