@@ -43,9 +43,13 @@ export class RequestService {
   }
 
   createRequest(employee: Requests) {
-    let r = {"empId": employee.empId, "amount": employee.amount, "description": employee.description, "status": "PENDING", "resolvedBy": "--"};
-    return this.http.post<Requests[]>(this.baseUrl, r).subscribe(data => {console.log ("Request created.")});
+    
+    return this.http.post<Requests[]>(this.baseUrl, employee).subscribe(data => {console.log ("Request created.")});
 
+  }
+
+  updateRequest(r: Requests) {
+    return this.http.put(this.baseUrl, r);
   }
 
 }

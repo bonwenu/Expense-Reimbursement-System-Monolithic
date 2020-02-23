@@ -41,7 +41,7 @@
 				<tr *ngFor = "let request of requests">
 					<td>{{request.reqId}}</td>
 					<td>{{request.empId}}</td>
-					<td>{{request.amount}}</td>
+					<td>{{request.amount | currency:'USD' }}</td>
 					<td>{{request.description}}</td>
 					<td>{{request.status}}</td>
 					<td>{{request.resolvedBy}}</td>

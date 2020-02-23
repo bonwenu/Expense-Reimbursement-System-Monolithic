@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Employees } from 'src/Employees';
 import { Requests } from 'src/Requests';
 import { RequestService } from 'src/app/services/request.service';
+
 
 @Component({
   selector: 'app-create-requests',
@@ -14,7 +14,8 @@ export class CreateRequestsComponent implements OnInit {
   description: string
   id: number;
   request: Requests = new Requests();
-  
+  requests: Requests[] = [];
+  i: number = 0;
   
   
   constructor(private requestData: RequestService) { }
@@ -24,8 +25,11 @@ export class CreateRequestsComponent implements OnInit {
   ngOnInit() {
   }
 
-  create() {
-    this.request.empId = Number(sessionStorage.getItem("workerId"));
-    this.requestData.createRequest(this.request)
+  create(r : Requests) {
+    r.empId = Number(sessionStorage.getItem("workerId"));
+    r.status ="PENDING";
+    r.resolvedBy = "--";
+    this.requestData.createRequest(r);
+    this.requests.push(r);
   }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.daos.WorkerDAO;
@@ -37,6 +38,12 @@ public class WorkerController {
 	public Worker getWorkerById(@PathVariable int id) {
 		
 		return ws.getWorkerById(id);
+	}
+	
+	@GetMapping("/name/{id}")
+	public @ResponseBody String getNameById(@PathVariable int id) {
+		Worker w = ws.getWorkerById(id);
+		return w.getFirstName() + " "+w.getLastName();
 	}
 	
 	@PutMapping

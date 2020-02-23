@@ -43,14 +43,17 @@
 					<th>Description</th>
 					<th>Status</th>
 					<th>Resolved By</th>
+					<th [ngStyle] = "{'text-align':'center'}">Action</th>
 				</tr>
 				<tr *ngFor = "let request of requests">
 					<td>{{request.reqId}}</td>
 					<td>{{request.empId}}</td>
-					<td>{{request.amount}}</td>
+					<td>{{request.amount | currency:'USD' }}</td>
 					<td>{{request.description}}</td>
 					<td>{{request.status}}</td>
 					<td>{{request.resolvedBy}}</td>
+					<td><button class="btn btn-primary" (click)="approve(request)">APPROVE</button>
+						<button [ngStyle] = "{'margin-left': '30px'}" class="btn btn-danger" (click)="deny(request)">DENY</button></td>
 				</tr>
 			</table>
 		</div> <br><br>

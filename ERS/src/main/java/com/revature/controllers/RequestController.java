@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Request;
+import com.revature.models.Worker;
 import com.revature.services.RequestService;
 
 @RestController
@@ -57,6 +59,11 @@ public class RequestController {
 	@PostMapping
 	public void createRequest(@RequestBody Request r) {
 		rs.createRequest(r);
+	}
+	
+	@PutMapping
+	public void updateRequest(@RequestBody Request r) {
+		rs.updateRequest(r);
 	}
 	
 }

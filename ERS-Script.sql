@@ -30,6 +30,12 @@ create table WORKER (
 
 alter table WORKER 
         add constraint UK_cren5h0hsio1a11dxeqvotyb4 unique (username);
+DROP SEQUENCE WORKER_SEQ;
+DROP SEQUENCE REQUEST_SEQ;
+
+CREATE SEQUENCE  "ADMIN"."WORKER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+
+CREATE SEQUENCE  "ADMIN"."REQUEST_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 
 
 insert into WORKER (workerId, lastName, firstName, username, passCode, title, reportsTo, hireDate, streetAddress, city, state, zip, phone, email) values (worker_seq.nextval, 'Ten', 'Ben', 'benjamin721', 'benchee5151', 'Data Coordiator', 10, '1/1/2019', '41 Randy Pass', 'Boston', 'Massachusetts', '02124', '611-772-4221', 'bpavluk2@admin.ch');
