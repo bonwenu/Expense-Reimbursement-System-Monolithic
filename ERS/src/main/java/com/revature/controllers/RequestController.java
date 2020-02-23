@@ -57,8 +57,9 @@ public class RequestController {
 	}
 	
 	@PostMapping
-	public void createRequest(@RequestBody Request r) {
-		rs.createRequest(r);
+	public Request createRequest(@RequestBody Request r) {
+
+		return rs.createRequest(r);
 	}
 	
 	// Return list after approving/denying request

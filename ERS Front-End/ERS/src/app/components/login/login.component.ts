@@ -26,7 +26,15 @@ export class LoginComponent implements OnInit, AfterViewInit  {
     private employeeData: EmployeeService) { }
 
   ngOnInit() {
+    sessionStorage.setItem("loggedAs", "BL Employee")
+    
+    let x = sessionStorage.getItem("loggedAs");
+        
+    if (x === "BL Employee") { 
+      this.router.navigateByUrl("/mHome")
 
+    }
+    
     this.employeeData.getAllEmployees().subscribe(data => {
       this.users = data;
 
@@ -59,7 +67,9 @@ export class LoginComponent implements OnInit, AfterViewInit  {
   }
   authorize() {
     this.loginservice.authenticate(this.username, this.title, this.id) 
-    if (sessionStorage.getItem("title") === "Manager") { 
+    let x = sessionStorage.getItem("title");
+    
+    if (x === "Manager") { 
       this.router.navigateByUrl("/mHome")
       this.invalidLogin = false
     }

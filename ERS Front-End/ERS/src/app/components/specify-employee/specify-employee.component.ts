@@ -17,8 +17,11 @@ export class SpecifyEmployeeComponent implements OnInit {
   constructor(private requestData:RequestService, private router: Router) { }
 
   ngOnInit() {
+    let x = sessionStorage.getItem("title");
     
-
+    if (x !== "Manager") { 
+      this.router.navigateByUrl("/403");
+    }
   }
 
   getData() {
@@ -36,6 +39,14 @@ export class SpecifyEmployeeComponent implements OnInit {
       console.log("Specified employee non-pending requests have been loaded");
     });
 
+  }
+  back() {
+    if(sessionStorage.getItem("title") === "Manager") {
+      this.router.navigateByUrl("/mHome");
+    } 
+    else {
+      this.router.navigateByUrl("/eHome");
+    }
   }
 
 }

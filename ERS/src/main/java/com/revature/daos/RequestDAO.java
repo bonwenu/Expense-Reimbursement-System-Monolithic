@@ -11,7 +11,7 @@ public interface RequestDAO {
 	public List<Request> getAllNonPending();
 	public List<Request> getPendingById(int id);
 	public List<Request> getNonPendingById(int id); 
-	public void createRequest(Request r);
+	public Request createRequest(Request r);
 	public void updateRequest(Request r);
 	public void deleteRequest(int id);
 	

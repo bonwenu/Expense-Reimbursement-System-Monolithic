@@ -43,8 +43,7 @@ export class RequestService {
   }
 
   createRequest(employee: Requests) {
-    
-    return this.http.post<Requests[]>(this.baseUrl, employee).subscribe(data => {console.log ("Request created.")});
+    return this.http.post(this.baseUrl, employee);
 
   }
 

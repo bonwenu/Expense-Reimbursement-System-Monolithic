@@ -29,8 +29,8 @@ public class RequestServiceImpl implements RequestService {
 
 	@Transactional
 	@Override
-	public void createRequest(Request r) {
-		rd.createRequest(r);
+	public Request createRequest(Request r) {
+		return rd.createRequest(r);
 	}
 	
 	@Transactional

@@ -31,16 +31,17 @@ public class WorkerDAOImpl implements WorkerDAO {
 	}
 	
 	@Override
-	public void createWorker(Worker w) {
+	public Worker createWorker(Worker w) {
 		Session s = sessionFactory.getCurrentSession();
 		s.save(w);
+		return w;
 	}
 
 	@Override
-	public void updateWorkerInfo(Worker w) {
+	public Worker updateWorkerInfo(Worker w) {
 		Session s = sessionFactory.getCurrentSession();
 		s.merge(w);
-		
+		return w;
 	}
 
 	

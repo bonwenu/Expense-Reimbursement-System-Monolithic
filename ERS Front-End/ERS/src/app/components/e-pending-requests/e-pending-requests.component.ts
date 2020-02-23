@@ -17,8 +17,6 @@ export class EPendingRequestsComponent implements OnInit {
     console.log(sessionStorage.getItem("workerId"));
     this.requestData.getPendingRequestsById(Number(sessionStorage.getItem("workerId"))).subscribe(data => {
       this.requests = data;
-      console.log(this.requests);
-      
       console.log("Pending requests have been loaded");
     
   });

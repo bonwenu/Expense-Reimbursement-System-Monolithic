@@ -8,10 +8,14 @@ import { Router } from '@angular/router';
 })
 export class ManagerHomeComponent implements OnInit {
 
-  x: string = "Manager";
   constructor(private router:Router) { }
 
   ngOnInit() {
-
+    
+    let x = sessionStorage.getItem("title");
+        
+    if (x !== "Manager") { 
+      this.router.navigateByUrl("/eHome")
+    }
   }
 }

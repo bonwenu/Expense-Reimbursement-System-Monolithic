@@ -31,18 +31,16 @@ public class WorkerServiceImpl implements WorkerService {
 
 	@Override
 	@Transactional
-	public void createWorker(Worker w) {
+	public Worker createWorker(Worker w) {
 		
-		wd.createWorker(w);
-		
+		return wd.createWorker(w);	
 	}
 	
 	@Override
 	@Transactional
-	public void updateWorkerInfo(Worker w) {
+	public Worker updateWorkerInfo(Worker w) {
 
-		wd.updateWorkerInfo(w);
-		
+		return wd.updateWorkerInfo(w);
 	}
 
 }

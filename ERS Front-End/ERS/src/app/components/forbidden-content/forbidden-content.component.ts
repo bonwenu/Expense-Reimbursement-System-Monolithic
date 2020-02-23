@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forbidden-content',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForbiddenContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  back() {
+    if(sessionStorage.getItem("title") === "Manager") {
+      this.router.navigateByUrl("/mHome");
+    } 
+    else {
+      this.router.navigateByUrl("/eHome");
+    }
+}
 
 }

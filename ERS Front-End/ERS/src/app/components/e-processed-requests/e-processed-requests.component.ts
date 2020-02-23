@@ -22,10 +22,10 @@ export class EProcessedRequestsComponent implements OnInit {
 
   back() {
     if(sessionStorage.getItem("title") === "Manager") {
-      this.router.navigateByUrl("mHome");
+      this.router.navigateByUrl("/mHome");
     } 
     else {
-      this.router.navigateByUrl("eHome");
+      this.router.navigateByUrl("/eHome");
     }
   }
 

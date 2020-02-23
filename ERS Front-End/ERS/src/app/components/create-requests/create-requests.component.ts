@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Requests } from 'src/Requests';
 import { RequestService } from 'src/app/services/request.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,19 +12,33 @@ import { RequestService } from 'src/app/services/request.service';
 export class CreateRequestsComponent implements OnInit {
 
   request: Requests = new Requests();
-  requests: Requests[] = [];
-  
-  constructor(private requestData: RequestService) { }
+  requests = [];
+
+  constructor(private requestData: RequestService, private router: Router) { }
 
   ngOnInit() {
+
+  }
+
+  back() {
+    if(sessionStorage.getItem("title") === "Manager") {
+      this.router.navigateByUrl("/mHome");
+    } 
+    else {
+      this.router.navigateByUrl("/eHome");
+    }
   }
 
   create(r : Requests) {
     r.empId = Number(sessionStorage.getItem("workerId"));
     r.status ="PENDING";
     r.resolvedBy = "--";
-    this.requestData.createRequest(r);
-    let copy = Object.assign({}, r);
-    this.requests.push(copy);
+    this.requestData.createRequest(r).subscribe(data => {
+      // Push new requests to Newly table
+      this.requests.push(data);
+    });
+    // Clear fields
+    this.request.amount = null;
+    this.request.description = null;
   }
 }

@@ -34,9 +34,10 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 
 	@Override
-	public void createRequest(Request r) {
+	public Request createRequest(Request r) {
 		Session s = sessionFactory.getCurrentSession();
 		s.save(r);
+		return r;
 	}
 
 	@Override

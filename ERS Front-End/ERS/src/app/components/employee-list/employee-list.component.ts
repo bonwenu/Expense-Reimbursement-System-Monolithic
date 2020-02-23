@@ -14,10 +14,14 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeData:EmployeeService, private router: Router) { }
 
   ngOnInit() {
+    let x = sessionStorage.getItem("title");
     
+    if (x !== "Manager") { 
+      this.router.navigateByUrl("/403");
+    }
+
     this.employeeData.getAllEmployees().subscribe(data => {
       this.employees = data;
-      console.log(this.employees);
       console.log("Employee list has been loaded");
     } );
   }

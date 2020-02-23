@@ -18,14 +18,20 @@ export class MPendingRequestsComponent implements OnInit {
   constructor(private employeeData: EmployeeService, private requestData:RequestService, private router:Router) { }
 
   ngOnInit() {
+    // No access if not a manager
+    let x = sessionStorage.getItem("title");
+    
+    if (x !== "Manager") { 
+      this.router.navigateByUrl("/403");
+    }
     this.requestData.getAllPendingRequests().subscribe(data => {
       this.requests = data;
       console.log(this.requests);
       console.log("Pending requests have been loaded");
 
     });
-    let x = Number(sessionStorage.getItem("workerId"))
-    this.employeeData.getEmployeeNameById(x).subscribe(data => {
+    let id = Number(sessionStorage.getItem("workerId"))
+    this.employeeData.getEmployeeNameById(id).subscribe(data => {
       this.employeeName = data;
       sessionStorage.setItem("name", data);
     });
@@ -50,5 +56,14 @@ export class MPendingRequestsComponent implements OnInit {
       console.log("Request denied");
     });
   }
+
+  back() {
+    if(sessionStorage.getItem("title") === "Manager") {
+      this.router.navigateByUrl("/mHome");
+    } 
+    else {
+      this.router.navigateByUrl("/eHome");
+    }
+}
 
 }

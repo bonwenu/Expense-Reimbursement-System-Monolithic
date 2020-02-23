@@ -42,6 +42,7 @@ export class ProfileComponent implements OnInit {
       // Updated information is sent from backend
       this.profileData = data;
       sessionStorage.removeItem("pData");
+      sessionStorage.setItem("pData", JSON.stringify(this.profileData));
       // Reset form fields
       this.employee = new Employees();
     });

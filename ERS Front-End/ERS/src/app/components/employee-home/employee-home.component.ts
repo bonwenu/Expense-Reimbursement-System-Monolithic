@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,16 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-home.component.css']
 })
 export class EmployeeHomeComponent implements OnInit {
+  
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if(sessionStorage.getItem("title") == "Manager") {
-      this.router.navigate(['mHome'])
+    let x = sessionStorage.getItem("title");
+    
+    if (x === "Manager") { 
+      this.router.navigateByUrl("/mHome");
+    }
+    
     } 
-    console.log(typeof(sessionStorage.getItem("title")))
-    console.log(typeof("Manager"));
-  
-  }
+
 
 }
+  
+
+

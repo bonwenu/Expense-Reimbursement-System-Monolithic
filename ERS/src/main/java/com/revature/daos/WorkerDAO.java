@@ -7,8 +7,8 @@ public interface WorkerDAO {
 		
 		List<Worker> getAllWorkers();
 		public Worker getWorkerById(int id);
-		public void createWorker(Worker w);
-		public void updateWorkerInfo(Worker w);
+		public Worker createWorker(Worker w);
+		public Worker updateWorkerInfo(Worker w);
 		
 
 	

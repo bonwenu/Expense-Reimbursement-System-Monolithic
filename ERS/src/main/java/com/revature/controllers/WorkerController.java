@@ -50,6 +50,6 @@ public class WorkerController {
 	@PutMapping
 	public Worker updateWorker(@RequestBody Worker w) {
 		ws.updateWorkerInfo(w);
-		return ws.getWorkerById(w.getWorkerId());
+		return ws.updateWorkerInfo(w);
 	}
 }
