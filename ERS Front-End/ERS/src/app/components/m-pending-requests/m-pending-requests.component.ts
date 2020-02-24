@@ -26,7 +26,7 @@ export class MPendingRequestsComponent implements OnInit {
     }
     this.requestData.getAllPendingRequests().subscribe(data => {
       this.requests = data;
-      console.log(this.requests);
+      
       console.log("Pending requests have been loaded");
 
     });

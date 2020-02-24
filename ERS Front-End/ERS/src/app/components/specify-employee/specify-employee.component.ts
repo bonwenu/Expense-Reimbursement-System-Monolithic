@@ -30,12 +30,12 @@ export class SpecifyEmployeeComponent implements OnInit {
    // Make it to button press
     this.requestData.getPendingRequestsById(this.id).subscribe(data => {
       this.pRequests = data;
-      console.log(this.pRequests);
+      //console.log(this.pRequests);
       console.log("Specified employee pending requests have been loaded");
     });
     this.requestData.getNonPendingRequestsById(this.id).subscribe(data => {
       this.nPRequests = data;
-      console.log(this.nPRequests);
+      //console.log(this.nPRequests);
       console.log("Specified employee non-pending requests have been loaded");
     });
 

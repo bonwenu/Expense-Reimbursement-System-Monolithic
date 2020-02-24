@@ -13,10 +13,9 @@ export class EProcessedRequestsComponent implements OnInit {
   constructor(private router: Router, private requestData: RequestService) { }
 
   ngOnInit() {
-    console.log(sessionStorage.getItem("workerId"));
+   
     this.requestData.getNonPendingRequestsById(Number(sessionStorage.getItem("workerId"))).subscribe(data => {
       this.requests = data;
-      console.log(this.requests);
   });
 }
 

@@ -23,7 +23,6 @@ export class MProcessedRequestsComponent implements OnInit {
 
     this.requestData.getAllNonPendingRequests().subscribe(data => {
       this.requests = data;
-      console.log(this.requests);
       console.log("Non-Pending requests have been loaded");
 
     });

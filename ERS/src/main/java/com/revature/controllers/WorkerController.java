@@ -21,7 +21,8 @@ import com.revature.models.Worker;
 import com.revature.services.WorkerService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"})
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080", 
+		"http://expense-reimbursement-system.s3-website.us-east-2.amazonaws.com"})
 @RequestMapping("/api/workers")
 public class WorkerController {
 	

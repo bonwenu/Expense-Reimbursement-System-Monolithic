@@ -12,10 +12,10 @@ import { Employees } from 'src/Employees';
 })
 export class LoginComponent implements OnInit, AfterViewInit  {
 
-  username:string = 'javainuse';
+  username:string = '';
   password:string = '';
   invalidLogin:boolean = false;
-  errorMessage:string = 'Invalid Credentials';
+  invalidCredentials:boolean = false;
   users:Employees[];
   employee : Employees;
   title: string;
@@ -63,7 +63,9 @@ export class LoginComponent implements OnInit, AfterViewInit  {
     }
     if (valid) {
       this.authorize();
+      return;
     }
+    this.invalidCredentials = true;
   }
   authorize() {
     this.loginservice.authenticate(this.username, this.title, this.id) 

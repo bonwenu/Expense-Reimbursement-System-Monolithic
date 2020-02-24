@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<br><br>
     <hr style= "border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:3mm">
     <h1>Welcome </h1>
     <h2>to</h2>
@@ -24,10 +23,12 @@
     <br>
     <div class="container">
         <div>
-          User Name : <input type="text" name="username" [(ngModel)]="username">
-          Password : <input type="password" name="password" [(ngModel)]="password">
+          User Name : <input type="text" name="username" [(ngModel)]="username"><br><br>
+          &nbsp;&nbsp; Password : <input type="password" name="password" [(ngModel)]="password">
         </div>
-        <button (click)=checkLogin() class="btn btn-success">
+        <br>
+        <h6 *ngIf = invalidCredentials style = "color: red; margin-left: 1in;">Inavlid credentials!</h6>
+        <button style ="margin-left: 2.2in;" (click)=checkLogin() class="btn btn-success">
           Login
         </button>
     </div>
