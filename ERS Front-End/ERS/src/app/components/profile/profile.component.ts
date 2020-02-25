@@ -13,16 +13,15 @@ export class ProfileComponent implements OnInit {
   profileData: object;
   // Check if edit was pushed
   editActive : boolean = false;
-  
+  oldData;
   constructor(private employeeData: EmployeeService) { }
 
   ngOnInit() {
     // Gets user profile data;
     this.employeeData.getEmployeeById(Number(sessionStorage.getItem("workerId"))).subscribe(data => {
       this.profileData = data;
-      sessionStorage.setItem("pData", JSON.stringify(this.profileData));
       console.log("Profile data loaded");
-      
+      this.oldData= this.profileData;
     });
   }
   // Edit
@@ -41,8 +40,7 @@ export class ProfileComponent implements OnInit {
     this.employeeData.updateEmployee(this.employee).subscribe(data => {
       // Updated information is sent from backend
       this.profileData = data;
-      sessionStorage.removeItem("pData");
-      sessionStorage.setItem("pData", JSON.stringify(this.profileData));
+      this.oldData = this.profileData;
       // Reset form fields
       this.employee = new Employees();
     });
@@ -50,7 +48,7 @@ export class ProfileComponent implements OnInit {
 
   testForNoChange() {
 
-    let x = JSON.parse(sessionStorage.getItem("pData"));
+    let x = this.oldData;
 
     if (this.employee.firstName === undefined) {
       this.employee.firstName = x.firstName;
