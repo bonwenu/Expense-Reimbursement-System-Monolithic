@@ -1,5 +1,7 @@
 package com.revature.daos;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -29,6 +31,7 @@ public class RequestDAOImpl implements RequestDAO {
 		else {
 			log.info("List of all requests was successfuly gathered");
 		}
+		Collections.sort(requests, Comparator.comparing(Request::getReqId));
 		return requests;
 	}
 
@@ -39,6 +42,7 @@ public class RequestDAOImpl implements RequestDAO {
 		requests = s.createQuery("from Request where empId = :empId")
 				.setParameter("empId", id)
 				.list();
+		Collections.sort(requests, Comparator.comparing(Request::getReqId));
 		return requests;
 	}
 
@@ -72,6 +76,7 @@ public class RequestDAOImpl implements RequestDAO {
 		requests = s.createQuery("from Request where status = :status")
 				.setParameter("status","PENDING" )
 				.list();
+		Collections.sort(requests, Comparator.comparing(Request::getReqId));
 		return requests;
 	}
 	
@@ -81,6 +86,7 @@ public class RequestDAOImpl implements RequestDAO {
 		requests = s.createQuery("from Request where status <> :status")
 				.setParameter("status","PENDING" )
 				.list();
+		Collections.sort(requests, Comparator.comparing(Request::getReqId));
 		return requests;
 	}
 
@@ -92,6 +98,7 @@ public class RequestDAOImpl implements RequestDAO {
 				.setParameter("empId",id )
 				.setParameter("status","PENDING" )
 				.list();
+		Collections.sort(requests, Comparator.comparing(Request::getReqId));
 		return requests;
 	}
 
@@ -103,6 +110,7 @@ public class RequestDAOImpl implements RequestDAO {
 				.setParameter("empId",id )
 				.setParameter("status","PENDING" )
 				.list();
+		Collections.sort(requests, Comparator.comparing(Request::getReqId));
 		return requests;
 	}
 

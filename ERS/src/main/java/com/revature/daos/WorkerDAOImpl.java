@@ -1,5 +1,7 @@
 package com.revature.daos;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -8,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.revature.models.Request;
 import com.revature.models.Worker;
 
 @Repository
@@ -29,6 +32,7 @@ public class WorkerDAOImpl implements WorkerDAO {
 		else {
 			log.info("List of all workers was successfuly gathered");
 		}
+		Collections.sort(workers, Comparator.comparing(Worker::getWorkerId));
 		return workers;
 	}
 	
