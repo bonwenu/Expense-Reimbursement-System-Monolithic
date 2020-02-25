@@ -1,0 +1,161 @@
+2020-02-24 20:30:37 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-02-24 20:30:37 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2020-02-24 20:30:37 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2020-02-24 20:30:37 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2020-02-24 20:30:38 INFO  Dialect:145 - HHH000400: Using dialect: com.revature.util.Oracle10gDialectExtended
+2020-02-24 20:30:39 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-02-24 20:30:39 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-02-24 20:30:39 INFO  SchemaValidator:157 - HHH000229: Running schema validator
+2020-02-24 20:30:39 INFO  SchemaValidator:165 - HHH000102: Fetching database metadata
+2020-02-24 20:30:40 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.REQUEST
+2020-02-24 20:30:40 INFO  TableMetadata:66 - HHH000037: Columns: [empid, amount, resolvedby, description, reqid, status]
+2020-02-24 20:30:41 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.WORKER
+2020-02-24 20:30:41 INFO  TableMetadata:66 - HHH000037: Columns: [zip, workerid, firstname, city, reportsto, title, hiredate, lastname, phone, streetaddress, state, passcode, email, username]
+2020-02-24 20:30:49 INFO  WorkerController:33 - Workers loaded.
+2020-02-24 20:58:43 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-02-24 20:58:43 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2020-02-24 20:58:43 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2020-02-24 20:58:43 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2020-02-24 20:58:44 INFO  Dialect:145 - HHH000400: Using dialect: com.revature.util.Oracle10gDialectExtended
+2020-02-24 20:58:44 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-02-24 20:58:44 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-02-24 20:58:45 INFO  SchemaValidator:157 - HHH000229: Running schema validator
+2020-02-24 20:58:45 INFO  SchemaValidator:165 - HHH000102: Fetching database metadata
+2020-02-24 20:58:46 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.REQUEST
+2020-02-24 20:58:46 INFO  TableMetadata:66 - HHH000037: Columns: [empid, amount, resolvedby, description, reqid, status]
+2020-02-24 20:58:47 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.WORKER
+2020-02-24 20:58:47 INFO  TableMetadata:66 - HHH000037: Columns: [zip, workerid, firstname, city, reportsto, title, hiredate, lastname, phone, streetaddress, state, passcode, email, username]
+2020-02-24 20:58:50 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 20:58:51 INFO  WorkerDAOImpl:31 - List of all workers was successfuly gathered
+2020-02-24 20:58:59 INFO  RequestController:64 - A request to add a request was received
+2020-02-24 20:58:59 INFO  RequestDAOImpl:49 - Request with ID: 61sucessfully inserted
+2020-02-24 20:58:59 INFO  RequestController:66 - Request [reqId=61, empId=1, amount=40.0, description=I dont know, status=PENDING, resolvedBy=--] created and sent to caller
+2020-02-24 20:59:03 INFO  RequestController:64 - A request to add a request was received
+2020-02-24 20:59:03 INFO  RequestDAOImpl:49 - Request with ID: 62sucessfully inserted
+2020-02-24 20:59:04 INFO  RequestController:66 - Request [reqId=62, empId=1, amount=10.0, description=Plumbing, status=PENDING, resolvedBy=--] created and sent to caller
+2020-02-24 20:59:09 INFO  RequestController:57 - List of pending requests for worker with ID:1 was called for and information was sent to caller
+2020-02-24 20:59:17 INFO  RequestController:51 - List of non-pending requests for worker with ID:1 was called for and information was sent to caller
+2020-02-24 20:59:21 INFO  WorkerController:39 - Get request for worker with ID: 1 was called
+2020-02-24 20:59:22 INFO  WorkerDAOImpl:40 - Worker with ID: 1gethered.
+2020-02-24 20:59:22 INFO  WorkerController:41 - Worker = Worker [workerId=1, lastName=Ten the III, firstName=Ben, username=benjamin721, passCode=benchee5151, title=Data Coordiator, reportsTo=10, hireDate=1/1/2019, streetAddress=41 Randy Pass, city=Boston, state=Massachusetts, zip=02124, phone=611-772-4221, email=bpavluk2@admin.ch] was sent
+2020-02-24 20:59:35 INFO  WorkerController:55 - A request to update a worker personal information was received
+2020-02-24 20:59:35 INFO  WorkerDAOImpl:56 - Worker with ID: 1sucessfully updated
+2020-02-24 20:59:35 INFO  WorkerController:57 - Worker [workerId=1, lastName=Ten the III, firstName=Kevin, username=benjamin721, passCode=benchee5151, title=Data Coordiator, reportsTo=10, hireDate=1/1/2019, streetAddress=41 Randy Pass, city=Boston, state=Massachusetts, zip=02124, phone=611-772-4221, email=bpavluk2@admin.ch] updated and sent to caller
+2020-02-24 20:59:43 INFO  WorkerController:55 - A request to update a worker personal information was received
+2020-02-24 20:59:44 INFO  WorkerDAOImpl:56 - Worker with ID: 1sucessfully updated
+2020-02-24 20:59:44 INFO  WorkerController:57 - Worker [workerId=1, lastName=Ten the III, firstName=Ben, username=benjamin721, passCode=benchee5151, title=Data Coordiator, reportsTo=10, hireDate=1/1/2019, streetAddress=41 Randy Pass, city=Boston, state=Massachusetts, zip=02124, phone=611-772-4221, email=bpavluk2@admin.ch] updated and sent to caller
+2020-02-24 20:59:52 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 20:59:52 INFO  WorkerDAOImpl:31 - List of all workers was successfuly gathered
+2020-02-24 21:00:04 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:00:05 INFO  WorkerDAOImpl:40 - Worker with ID: 10gethered.
+2020-02-24 21:00:05 INFO  WorkerController:49 - Name: Gwen Downgston sent
+2020-02-24 21:00:07 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:00:08 INFO  RequestDAOImpl:57 - Request with ID: 14sucessfully updated
+2020-02-24 21:00:08 INFO  RequestController:75 - Request [reqId=14, empId=6, amount=200.0, description=New printer for office, status=APPROVED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:00:08 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:00:10 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:00:10 INFO  RequestDAOImpl:57 - Request with ID: 19sucessfully updated
+2020-02-24 21:00:10 INFO  RequestController:75 - Request [reqId=19, empId=8, amount=200.0, description=New printer for office, status=DENIED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:00:10 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:00:13 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:00:14 INFO  RequestDAOImpl:57 - Request with ID: 16sucessfully updated
+2020-02-24 21:00:14 INFO  RequestController:75 - Request [reqId=16, empId=2, amount=300.0, description=New printer for office, status=APPROVED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:00:14 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:00:22 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:00:22 INFO  RequestDAOImpl:57 - Request with ID: 21sucessfully updated
+2020-02-24 21:00:22 INFO  RequestController:75 - Request [reqId=21, empId=4, amount=7.0, description=Coffee for office, status=DENIED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:00:22 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:00:24 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:00:24 INFO  RequestDAOImpl:57 - Request with ID: 23sucessfully updated
+2020-02-24 21:00:24 INFO  RequestController:75 - Request [reqId=23, empId=3, amount=444.0, description=Lyft Transportation, status=DENIED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:00:24 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:00:27 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:00:27 INFO  RequestDAOImpl:57 - Request with ID: 27sucessfully updated
+2020-02-24 21:00:27 INFO  RequestController:75 - Request [reqId=27, empId=4, amount=7.0, description=Coffee for office, status=APPROVED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:00:27 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:03:07 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-02-24 21:03:07 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2020-02-24 21:03:07 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2020-02-24 21:03:07 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2020-02-24 21:03:08 INFO  Dialect:145 - HHH000400: Using dialect: com.revature.util.Oracle10gDialectExtended
+2020-02-24 21:03:08 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-02-24 21:03:08 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-02-24 21:03:09 INFO  SchemaValidator:157 - HHH000229: Running schema validator
+2020-02-24 21:03:09 INFO  SchemaValidator:165 - HHH000102: Fetching database metadata
+2020-02-24 21:03:10 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.REQUEST
+2020-02-24 21:03:10 INFO  TableMetadata:66 - HHH000037: Columns: [empid, amount, resolvedby, description, reqid, status]
+2020-02-24 21:03:11 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.WORKER
+2020-02-24 21:03:11 INFO  TableMetadata:66 - HHH000037: Columns: [zip, workerid, firstname, city, reportsto, title, hiredate, lastname, phone, streetaddress, state, passcode, email, username]
+2020-02-24 21:04:19 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:04:20 INFO  WorkerDAOImpl:39 - Worker with ID: 10gethered.
+2020-02-24 21:04:20 INFO  WorkerController:49 - Name: Gwen Downgston sent
+2020-02-24 21:04:22 INFO  RequestController:44 - List of all non-pending requests was called for and information was sent to caller
+2020-02-24 21:04:29 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:04:29 INFO  WorkerDAOImpl:39 - Worker with ID: 10gethered.
+2020-02-24 21:04:29 INFO  WorkerController:49 - Name: Gwen Downgston sent
+2020-02-24 21:04:33 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:04:33 INFO  RequestDAOImpl:57 - Request with ID: 24sucessfully updated
+2020-02-24 21:04:33 INFO  RequestController:75 - Request [reqId=24, empId=4, amount=200.0, description=New printer for office, status=DENIED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:04:33 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:04:38 INFO  RequestController:44 - List of all non-pending requests was called for and information was sent to caller
+2020-02-24 21:05:06 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:05:17 WARN  SqlExceptionHelper:144 - SQL Error: 17002, SQLState: 08006
+2020-02-24 21:05:17 ERROR SqlExceptionHelper:146 - IO Error: The Network Adapter could not establish the connection
+2020-02-24 21:05:17 WARN  SqlExceptionHelper:144 - SQL Error: 17002, SQLState: 08006
+2020-02-24 21:05:17 ERROR SqlExceptionHelper:146 - IO Error: The Network Adapter could not establish the connection
+2020-02-24 21:05:17 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:05:17 WARN  SqlExceptionHelper:144 - SQL Error: 17002, SQLState: 08006
+2020-02-24 21:05:17 ERROR SqlExceptionHelper:146 - IO Error: The Network Adapter could not establish the connection
+2020-02-24 21:05:17 WARN  SqlExceptionHelper:144 - SQL Error: 17002, SQLState: 08006
+2020-02-24 21:05:17 ERROR SqlExceptionHelper:146 - IO Error: The Network Adapter could not establish the connection
+2020-02-24 21:06:00 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:06:08 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered
+2020-02-24 21:08:19 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:08:20 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered
+2020-02-24 21:09:05 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:09:05 INFO  WorkerDAOImpl:39 - Worker with ID: 10gethered.
+2020-02-24 21:09:06 INFO  WorkerController:49 - Name: Gwen Downgston sent
+2020-02-24 21:09:09 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:09:10 INFO  RequestDAOImpl:57 - Request with ID: 30sucessfully updated
+2020-02-24 21:09:10 INFO  RequestController:75 - Request [reqId=30, empId=4, amount=200.0, description=New chair for office, status=APPROVED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:09:10 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:09:14 INFO  RequestController:44 - List of all non-pending requests was called for and information was sent to caller
+2020-02-24 21:09:26 INFO  RequestController:57 - List of pending requests for worker with ID:2 was called for and information was sent to caller
+2020-02-24 21:09:26 INFO  RequestController:51 - List of non-pending requests for worker with ID:2 was called for and information was sent to caller
+2020-02-24 21:09:32 INFO  RequestController:57 - List of pending requests for worker with ID:10 was called for and information was sent to caller
+2020-02-24 21:09:32 INFO  RequestController:51 - List of non-pending requests for worker with ID:10 was called for and information was sent to caller
+2020-02-24 21:09:40 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:09:41 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered
+2020-02-24 21:09:43 INFO  RequestController:57 - List of pending requests for worker with ID:10 was called for and information was sent to caller
+2020-02-24 21:09:46 INFO  RequestController:51 - List of non-pending requests for worker with ID:10 was called for and information was sent to caller
+2020-02-24 21:09:53 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:09:54 INFO  WorkerDAOImpl:39 - Worker with ID: 10gethered.
+2020-02-24 21:09:54 INFO  WorkerController:49 - Name: Gwen Downgston sent
+2020-02-24 21:09:57 INFO  RequestController:73 - A request to update a request was received
+2020-02-24 21:09:58 INFO  RequestDAOImpl:57 - Request with ID: 47sucessfully updated
+2020-02-24 21:09:58 INFO  RequestController:75 - Request [reqId=47, empId=10, amount=22.0, description=Log test 2, status=APPROVED, resolvedBy=Gwen Downgston] updated and sent to caller
+2020-02-24 21:09:58 INFO  RequestController:76 - New updated list of pending request was sent to caller successfuly
+2020-02-24 21:10:01 INFO  RequestController:51 - List of non-pending requests for worker with ID:10 was called for and information was sent to caller
+2020-02-24 21:10:11 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:10:12 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered
+2020-02-24 21:11:04 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:11:05 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered
+2020-02-24 21:11:08 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:11:09 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered
+2020-02-24 21:11:11 INFO  RequestController:44 - List of all non-pending requests was called for and information was sent to caller
+2020-02-24 21:11:13 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:11:14 INFO  WorkerDAOImpl:39 - Worker with ID: 10gethered.
+2020-02-24 21:11:14 INFO  WorkerController:49 - Name: Gwen Downgston sent
+2020-02-24 21:11:16 INFO  RequestController:44 - List of all non-pending requests was called for and information was sent to caller
+2020-02-24 21:11:19 INFO  RequestController:57 - List of pending requests for worker with ID:10 was called for and information was sent to caller
+2020-02-24 21:11:20 INFO  RequestController:51 - List of non-pending requests for worker with ID:10 was called for and information was sent to caller
+2020-02-24 21:11:22 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:11:23 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered
+2020-02-24 21:11:25 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-24 21:11:26 INFO  WorkerDAOImpl:39 - Worker with ID: 10gethered.
+2020-02-24 21:11:26 INFO  WorkerController:49 - Name: Gwen Downgston sent
+2020-02-24 21:11:28 INFO  WorkerController:39 - Get request for worker with ID: 10 was called
+2020-02-24 21:11:29 INFO  WorkerDAOImpl:39 - Worker with ID: 10gethered.
+2020-02-24 21:11:29 INFO  WorkerController:41 - Worker = Worker [workerId=10, lastName=Downgston, firstName=Gwen, username=benjamin720, passCode=benchee5050, title=Manager, reportsTo=0, hireDate=1/1/2016, streetAddress=43255 Pennman, city=St Louis, state=Missouri, zip=77544, phone=617-772-4221, email=ben10@yahoo.com] was sent
+2020-02-24 21:11:34 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-24 21:11:35 INFO  WorkerDAOImpl:30 - List of all workers was successfuly gathered

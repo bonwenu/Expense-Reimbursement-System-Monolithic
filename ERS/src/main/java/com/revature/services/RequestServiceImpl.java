@@ -35,8 +35,8 @@ public class RequestServiceImpl implements RequestService {
 	
 	@Transactional
 	@Override
-	public void updateRequest(Request r) {
-		rd.updateRequest(r);
+	public Request updateRequest(Request r) {
+		return rd.updateRequest(r);
 	}
 
 	@Transactional

@@ -2,6 +2,7 @@ package com.revature.daos;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,20 @@ public class RequestDAOImpl implements RequestDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	private Logger log = Logger.getLogger(RequestDAOImpl.class);
 	
 	@Override
 	public List<Request> getAllRequests() {
 		Session s = sessionFactory.getCurrentSession();
 		List<Request> requests = null;
 		requests = s.createQuery("from Request").list();
+		if(requests == null) {
+			log.error("No requests. Either no one wants to be paid back or DB is empty");
+			return null;
+		}
+		else {
+			log.info("List of all requests was successfuly gathered");
+		}
 		return requests;
 	}
 
@@ -37,13 +46,16 @@ public class RequestDAOImpl implements RequestDAO {
 	public Request createRequest(Request r) {
 		Session s = sessionFactory.getCurrentSession();
 		s.save(r);
+		log.info("Request with ID: " + r.getReqId() + "sucessfully inserted");
 		return r;
 	}
 
 	@Override
-	public void updateRequest(Request r) {
+	public Request updateRequest(Request r) {
 		Session s = sessionFactory.getCurrentSession();
 		s.merge(r);
+		log.info("Request with ID: " + r.getReqId() + "sucessfully updated");
+		return r;
 	}
 
 	@Override

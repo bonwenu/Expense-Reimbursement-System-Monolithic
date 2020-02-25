@@ -13,6 +13,6 @@ public interface RequestService {
 	public List<Request> getPendingById(int id) ;
 	public List<Request> getNonPendingById(int id); 
 	public Request createRequest(Request r);
-	public void updateRequest(Request r);
+	public Request updateRequest(Request r);
 	public void deleteRequest(int id);
 }
