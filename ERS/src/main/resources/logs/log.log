@@ -432,3 +432,87 @@
 2020-02-25 17:18:37 INFO  WorkerController:49 - Name: Gwen Dover sent
 2020-02-25 17:18:52 INFO  WorkerController:33 - List of all workers was called for sent.
 2020-02-25 17:18:53 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-25 23:27:46 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-02-25 23:27:46 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2020-02-25 23:27:46 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2020-02-25 23:27:46 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2020-02-25 23:27:48 INFO  Dialect:145 - HHH000400: Using dialect: com.revature.util.Oracle10gDialectExtended
+2020-02-25 23:27:48 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-02-25 23:27:48 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-02-25 23:27:48 INFO  SchemaValidator:157 - HHH000229: Running schema validator
+2020-02-25 23:27:48 INFO  SchemaValidator:165 - HHH000102: Fetching database metadata
+2020-02-25 23:27:50 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.REQUEST
+2020-02-25 23:27:50 INFO  TableMetadata:66 - HHH000037: Columns: [empid, amount, resolvedby, description, reqid, status]
+2020-02-25 23:27:51 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.WORKER
+2020-02-25 23:27:51 INFO  TableMetadata:66 - HHH000037: Columns: [zip, workerid, firstname, city, reportsto, title, hiredate, lastname, phone, streetaddress, state, passcode, email, username]
+2020-02-26 12:57:00 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-02-26 12:57:00 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2020-02-26 12:57:00 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2020-02-26 12:57:00 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2020-02-26 12:57:01 INFO  Dialect:145 - HHH000400: Using dialect: com.revature.util.Oracle10gDialectExtended
+2020-02-26 12:57:01 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-02-26 12:57:01 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-02-26 12:57:01 INFO  SchemaValidator:157 - HHH000229: Running schema validator
+2020-02-26 12:57:01 INFO  SchemaValidator:165 - HHH000102: Fetching database metadata
+2020-02-26 12:57:03 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.REQUEST
+2020-02-26 12:57:03 INFO  TableMetadata:66 - HHH000037: Columns: [empid, amount, resolvedby, description, reqid, status]
+2020-02-26 12:57:04 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.WORKER
+2020-02-26 12:57:04 INFO  TableMetadata:66 - HHH000037: Columns: [zip, workerid, firstname, city, reportsto, title, hiredate, lastname, phone, streetaddress, state, passcode, email, username]
+2020-02-26 12:57:17 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-26 12:57:17 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-26 12:57:24 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-26 12:57:25 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-26 12:57:28 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-26 12:57:29 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-26 12:57:31 INFO  RequestController:38 - List of all pending requests was called for and information was sent to caller
+2020-02-26 12:57:32 INFO  WorkerDAOImpl:43 - Worker with ID: 10gethered.
+2020-02-26 12:57:32 INFO  WorkerController:49 - Name: Gwen Dover sent
+2020-02-26 12:57:43 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-26 12:57:43 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:31:44 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-02-27 07:31:44 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2020-02-27 07:31:44 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2020-02-27 07:31:44 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2020-02-27 07:31:45 INFO  Dialect:145 - HHH000400: Using dialect: com.revature.util.Oracle10gDialectExtended
+2020-02-27 07:31:45 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-02-27 07:31:45 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-02-27 07:31:45 INFO  SchemaValidator:157 - HHH000229: Running schema validator
+2020-02-27 07:31:45 INFO  SchemaValidator:165 - HHH000102: Fetching database metadata
+2020-02-27 07:31:47 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.REQUEST
+2020-02-27 07:31:47 INFO  TableMetadata:66 - HHH000037: Columns: [empid, amount, resolvedby, description, reqid, status]
+2020-02-27 07:31:48 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.WORKER
+2020-02-27 07:31:48 INFO  TableMetadata:66 - HHH000037: Columns: [zip, workerid, firstname, city, reportsto, title, hiredate, lastname, phone, streetaddress, state, passcode, email, username]
+2020-02-27 07:32:24 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:32:25 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:32:25 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:32:26 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:32:34 INFO  RequestController:57 - List of pending requests for worker with ID:4 was called for and information was sent to caller
+2020-02-27 07:32:40 INFO  RequestController:57 - List of pending requests for worker with ID:4 was called for and information was sent to caller
+2020-02-27 07:32:42 INFO  RequestController:51 - List of non-pending requests for worker with ID:4 was called for and information was sent to caller
+2020-02-27 07:32:50 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:32:50 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:41:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-02-27 07:41:25 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2020-02-27 07:41:25 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2020-02-27 07:41:25 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2020-02-27 07:41:26 INFO  Dialect:145 - HHH000400: Using dialect: com.revature.util.Oracle10gDialectExtended
+2020-02-27 07:41:27 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-02-27 07:41:27 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-02-27 07:41:27 INFO  SchemaValidator:157 - HHH000229: Running schema validator
+2020-02-27 07:41:27 INFO  SchemaValidator:165 - HHH000102: Fetching database metadata
+2020-02-27 07:41:29 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.REQUEST
+2020-02-27 07:41:29 INFO  TableMetadata:66 - HHH000037: Columns: [empid, amount, resolvedby, description, reqid, status]
+2020-02-27 07:41:29 INFO  TableMetadata:65 - HHH000261: Table found: ADMIN.WORKER
+2020-02-27 07:41:29 INFO  TableMetadata:66 - HHH000037: Columns: [zip, workerid, firstname, city, reportsto, title, hiredate, lastname, phone, streetaddress, state, passcode, email, username]
+2020-02-27 07:41:58 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:41:58 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:42:04 INFO  RequestController:57 - List of pending requests for worker with ID:4 was called for and information was sent to caller
+2020-02-27 07:42:06 INFO  RequestController:51 - List of non-pending requests for worker with ID:4 was called for and information was sent to caller
+2020-02-27 07:42:08 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:42:08 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:42:29 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:42:29 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:42:29 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:42:30 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
+2020-02-27 07:42:32 INFO  WorkerController:33 - List of all workers was called for sent.
+2020-02-27 07:42:33 INFO  WorkerDAOImpl:33 - List of all workers was successfuly gathered
